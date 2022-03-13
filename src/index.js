@@ -1,11 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import Hello from './hello/hello'
 
 ReactDOM.render(
-  <App />,
+  <Router>
+    <Routes>
+      <Route exact path="/" element={<App />} />
+      <Route exact path="hello" element={<Hello />} />
+    </Routes>
+  </Router>,
   document.getElementById('root')
 );
 
